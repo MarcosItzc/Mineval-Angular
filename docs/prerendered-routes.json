@@ -1,0 +1,12 @@
+{
+  "routes": {
+    "/": {},
+    "/crearExamen": {},
+    "/estudiante": {},
+    "/home": {},
+    "/login": {},
+    "/profesor": {},
+    "/registro": {},
+    "/resolver": {}
+  }
+}
