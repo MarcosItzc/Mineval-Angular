@@ -1,0 +1,77 @@
+<div class="container">
+  <h1>Crear Evaluación</h1>
+
+  <form (ngSubmit)="crearExamen()">
+    <div>
+      <label>Materia:</label>
+      <input type="text" [(ngModel)]="materia" name="materia">
+    </div>
+
+    <div>
+      <label>Institución:</label>
+      <input type="text" [(ngModel)]="institucion" name="institucion">
+    </div>
+
+    <div>
+      <label>Título:</label>
+      <input type="text" [(ngModel)]="titulo" name="titulo">
+    </div>
+
+    <div>
+      <label>Descripción:</label>
+      <input type="text" [(ngModel)]="descripcion" name="descripcion">
+    </div>
+
+    <div>
+      <label>Duración:</label>
+      <input type="time" [(ngModel)]="duracion" name="duracion">
+    </div>
+
+    <button type="submit">Crear Examen</button>
+  </form>
+
+  <hr>
+
+  <h2>Preguntas del Examen</h2>
+
+  <div *ngFor="let pregunta of preguntas; let i = index">
+    <div>
+      <label>Pregunta:</label>
+      <input type="text" [(ngModel)]="preguntas[i].pregunta" name="pregunta{{i}}">
+    </div>
+
+    <div>
+      <label>Tipo:</label>
+      <select [(ngModel)]="preguntas[i].tipo" name="tipo{{i}}">
+        <option [value]="2">Opción Múltiple</option>
+        <option [value]="3">Verdadero/Falso</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Puntaje:</label>
+      <input type="number" [(ngModel)]="preguntas[i].puntaje" name="puntaje{{i}}" min="1">
+    </div>
+
+    <!-- Opciones -->
+    <div *ngFor="let opcion of preguntas[i].opciones; let j = index">
+  <label>Opción {{ j + 1 }}:</label>
+  <input type="text" [(ngModel)]="preguntas[i].opciones[j].texto_opcion" name="opcionTexto{{i}}_{{j}}">
+  
+  <label>
+    <input type="checkbox" [(ngModel)]="preguntas[i].opciones[j].correcta" name="opcionCorrecta{{i}}_{{j}}">
+    Correcta
+  </label>
+
+  <button type="button" (click)="eliminarOpcion(i, j)">Eliminar Opción</button>
+</div>
+
+<button type="button" (click)="agregarOpcion(i)">Agregar Opción</button>
+
+
+    <button type="button" (click)="eliminarPregunta(i)">Eliminar Pregunta</button>
+    <hr>
+  </div>
+
+  <button type="button" (click)="agregarPregunta()">Agregar Pregunta</button>
+</div>

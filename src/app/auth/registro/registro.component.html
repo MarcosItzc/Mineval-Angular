@@ -1,0 +1,29 @@
+<div class="registro-container">
+  <!-- Sección izquierda con imagen fija -->
+  <div class="left-section">
+    <img src="recursos/user001.png" alt="Imagen de Registro" class="logo" />
+  </div>
+
+  <!-- Sección derecha con el formulario -->
+  <div class="right-section">
+    <h1>Registro de Usuario</h1>
+
+    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+      <input formControlName="nombre" placeholder="Nombre" />
+      <input formControlName="apellido" placeholder="Apellido" />
+      <input formControlName="correo" placeholder="Correo" type="email" />
+      <input formControlName="contrasena" placeholder="Contraseña" type="password" />
+  
+      <select formControlName="rol">
+        <option [value]=1>Profesor</option>
+        <option [value]=2>Estudiante</option>
+      </select>
+
+    <button type="submit" [disabled]="registroForm.invalid">Registrar</button>
+  </form>
+
+<p>{{ mensaje }}</p>
+
+
+  </div>
+</div>

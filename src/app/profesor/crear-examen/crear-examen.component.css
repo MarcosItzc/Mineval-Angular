@@ -1,0 +1,139 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Contenedor principal centrado solo horizontal */
+:host {
+  display: flex;
+  justify-content: center;   /* Centrar horizontal */
+  align-items: flex-start;   /* Arriba, sin centrar vertical */
+  min-height: 100vh;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #2f069f; /* Fondo azul */
+  padding: 40px 20px;
+  overflow-y: auto;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  background-color: #2f069f;
+  color: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Labels */
+label {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* Inputs, textarea y selects */
+input, textarea, select {
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  background-color: white;
+  color: #000;
+}
+
+/* Textarea específico */
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Botones */
+button, input[type="submit"] {
+  background-color: #020202;
+  color: white;
+  font-size: 18px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: #010108;
+}
+
+/* Opciones dentro de cada pregunta */
+.opciones-list {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.opcion-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.opcion-item input[type="text"] {
+  flex: 1;
+}
+
+.opcion-item input[type="checkbox"] {
+  width: auto;
+  cursor: pointer;
+}
+
+/* Botones de agregar y eliminar (pequeños) */
+button.agregar-opcion,
+button.eliminar-opcion {
+  width: auto;
+  padding: 6px 12px;
+  font-size: 14px;
+  margin-top: 5px;
+  background-color: #0a48c7;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button.agregar-opcion:hover,
+button.eliminar-opcion:hover {
+  background-color: #083c9a;
+}
+
+/* Espaciado para preguntas */
+.pregunta-container {
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 20px;
+}
+
+/* Contenedor de título */
+.titulo-examen {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}

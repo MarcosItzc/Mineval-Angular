@@ -1,0 +1,21 @@
+<div class="evaluacion-container">
+  <h2>{{ examen.titulo }}</h2>
+
+  <form>
+    <div *ngFor="let pregunta of examen.preguntas; let i = index" class="pregunta">
+      <h4>{{ i + 1 }}. {{ pregunta.texto }}</h4>
+
+      <div class="opciones">
+        <label *ngFor="let opcion of pregunta.opciones">
+          <input
+            type="radio"
+            name="pregunta{{ i }}"
+          />
+          {{ opcion }}
+        </label>
+      </div>
+    </div>
+
+    <button type="submit" class="enviar-btn">Enviar respuestas</button>
+  </form>
+</div>

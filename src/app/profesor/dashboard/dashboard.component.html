@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="left-section">
+    <img src="/recursos/logo.jpg" alt="Logo" class="logo" />
+  </div>
+
+  <div class="right-section">
+    <div class="menu">
+      <a routerLink="/">Inicio</a>
+      <a routerLink="/contacto">Contacto</a>
+      <a routerLink="/crearExamen">Crear Evaluación</a>
+      <a href="#" (click)="cerrarSesion()">Cerrar Sesión</a>
+    </div>
+
+    <h1>Bienvenido</h1>
+    <h2>Evaluaciones Disponibles</h2>
+
+<div class="examen-card" *ngFor="let examen of evaluaciones">
+  <h3>{{ examen.titulo }}</h3>
+  <p><strong>Materia:</strong> {{ examen.materia }}</p>
+  <p><strong>Institución:</strong> {{ examen.institucion }}</p>
+  <p><strong>Descripción:</strong> {{ examen.descripcion }}</p>
+  <p><strong>Duración:</strong> {{ formatearDuracion(examen.duracion) }}</p>
+</div>
+
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+  <!-- Sección izquierda con imagen -->
+  <div class="left-section">
+    <img src="recursos/logo.jpg" alt="Logo de Mineval" />
+  </div>
+
+  <!-- Sección derecha con texto y botones -->
+  <div class="right-section">
+    <div class="menu">
+      <a routerLink="/">Inicio</a>
+      <a routerLink="/contacto">Contacto</a>
+    </div>
+
+    <h1 id="titulo">Bienvenido a Mineval</h1>
+
+    <p *ngIf="!isLoggedIn" class="descripcion">
+      Plataforma de evaluaciones en línea diseñada para instituciones educativas. Los docentes pueden crear exámenes y obtener estadísticas automáticas.
+    </p>
+
+    <p *ngIf="!isLoggedIn" class="acceso">
+      Para acceder, por favor regístrate o inicia sesión.
+    </p>
+
+    <div *ngIf="!isLoggedIn" class="botones-auth">
+      <a routerLink="/registro" class="btn-auth">Registrarse</a>
+      <a routerLink="/login" class="btn-auth">Iniciar Sesion</a>
+    </div>
+  </div>
+</div>
